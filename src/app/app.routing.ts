@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },    
-    { path: 'courses', component: CourseComponent },
+    { path: 'courses', component: CourseComponent },    
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

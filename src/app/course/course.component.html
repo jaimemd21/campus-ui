@@ -1,3 +1,8 @@
-<p>
-  course works!
-</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let c of courses" class="col-md-4">
+      {{c.id_course}} {{c.name}}
+      <img src="{{c.cover}}" (click)="viewMaterial(c.id_edition)">
+    </div>
+  </div>
+</div>
