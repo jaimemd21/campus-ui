@@ -1,3 +1,4 @@
+import { MaterialComponent } from './material/material.component';
 import { CourseComponent } from './course/course.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { LoginComponent } from './login/login.component';
@@ -7,7 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },    
-    { path: 'courses', component: CourseComponent },    
+    { path: 'courses', component: CourseComponent },
+    { path: 'materials/:idEdition', component: MaterialComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

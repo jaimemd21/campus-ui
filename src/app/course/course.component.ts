@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EditionStudent } from './../_models/editionStudent';
 import { CourseService } from './../_services/course.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class CourseComponent implements OnInit {
   idStudent: number;
   courses: EditionStudent[] = [];
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private router: Router) { }
 
   ngOnInit() {
     this.idStudent = JSON.parse(localStorage.getItem('currentID'));
@@ -27,7 +28,7 @@ export class CourseComponent implements OnInit {
   }
 
   viewMaterial(idEdition: number){
-    console.log(idEdition);
+    this.router.navigate(['/materials', idEdition]);    
   }
 
 }

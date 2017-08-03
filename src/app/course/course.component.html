@@ -3,6 +3,8 @@
     <div *ngFor="let c of courses" class="col-md-4">
       {{c.id_course}} {{c.name}}
       <img src="{{c.cover}}" (click)="viewMaterial(c.id_edition)">
+      <br />
+      <button type="button" class="btn btn-primary" (click)="viewMaterial(c.id_edition)">Ver</button>
     </div>
   </div>
 </div>

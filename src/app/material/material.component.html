@@ -1,3 +1,36 @@
-<p>
-  material works!
-</p>
+<div class="row">
+  <div class="col-sm-2">
+    <nav class="nav-sidebar">
+      <ul class="nav">
+        <li *ngFor="let m of materials">
+          <a (click)='getURLVideo(m.lesson - 1)'>Lección {{m.lesson}}</a></li>
+      </ul>
+    </nav>
+  </div>
+
+<div class="col-sm-8" *ngIf="src">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" [src]='src'></iframe>
+  </div>
+</div>
+
+  <div class="col-sm-2">
+    <nav class="nav-sidebar pull-right">
+      <ul class="nav">
+        <li class="active"><a href="javascript:;">Recursos</a></li>        
+        <li class="text-overflow" title="Combine them all to make an awesome, safe solution!">
+          <a href="javascript:;" class="media">
+                            <span class="pull-left">
+                                <i class="media-object glyphicon glyphicon-list"></i>
+                            </span>
+                            <div class="media-body">
+                                Proyecto 1 - Descargar
+                            </div>
+                        </a>
+        </li>
+        <li class="nav-divider"></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Descargar Todo</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
