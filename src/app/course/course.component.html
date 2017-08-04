@@ -1,10 +1,17 @@
 <div class="container">
-  <div class="row">
-    <div *ngFor="let c of courses" class="col-md-4">
-      {{c.id_course}} {{c.name}}
-      <img src="{{c.cover}}" (click)="viewMaterial(c.id_edition)">
-      <br />
-      <button type="button" class="btn btn-primary" (click)="viewMaterial(c.id_edition)">Ver</button>
+  <div class="page-header">
+    <h1>Cursos <small>Premium</small></h1>
+  </div>
+
+  <div class="row" *ngIf="courses.length > 0">
+    <div class="col-sm-6 col-md-4" *ngFor="let c of courses">
+      <div class="thumbnail">
+        <img src="{{c.cover}}" (click)="viewMaterial(c.id_edition)">
+        <div class="caption">
+          <h3>{{c.name}}</h3>
+          <p><a (click)="viewMaterial(c.id_edition)" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Ver</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

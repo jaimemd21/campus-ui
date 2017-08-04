@@ -1,3 +1,4 @@
+import { SafePipe } from './_pipes/safe.pipe';
 import { MaterialService } from './_services/material.service';
 import { CourseService } from './_services/course.service';
 import { DropdownDirective } from './_directives/dropdown.directive';
@@ -7,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -22,13 +24,15 @@ import { MaterialComponent } from './material/material.component';
     HomeComponent,
     CourseComponent,
     DropdownDirective,
-    MaterialComponent
+    MaterialComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    NgbModule
   ],
   providers: [UserService, CourseService, MaterialService, AuthGuard],
   bootstrap: [AppComponent]

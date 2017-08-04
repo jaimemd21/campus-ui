@@ -14,6 +14,7 @@ export class MaterialComponent implements OnInit {
   src: any;
   idEdition: number;
   materials: Material[] = [];
+  linkActive: number;
 
   constructor(
     private materialService: MaterialService,
@@ -29,13 +30,15 @@ export class MaterialComponent implements OnInit {
       obs.subscribe(data => {
         this.materials = data;
         if(this.materials.length > 0){
-          this.getURLVideo(0);
+          this.getURLVideo(1);
         }        
       })
     });
   }
 
   getURLVideo(lesson: number) {
-    this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.materials[lesson].url_video);
+    //this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/" + this.materials[lesson].url_video);
+    this.src = "https://player.vimeo.com/video/" + this.materials[lesson - 1].url_video;
+    this.linkActive = lesson;    
   }
 }
