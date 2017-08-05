@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
 import { MaterialComponent } from './material/material.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,16 @@ import { MaterialComponent } from './material/material.component';
     CourseComponent,
     DropdownDirective,
     MaterialComponent,
-    SafePipe
+    SafePipe,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     routing,
-    NgbModule
+    NgbModule.forRoot()
   ],
   providers: [UserService, CourseService, MaterialService, AuthGuard],
   bootstrap: [AppComponent]

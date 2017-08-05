@@ -15,6 +15,8 @@ export class MaterialComponent implements OnInit {
   idEdition: number;
   materials: Material[] = [];
   linkActive: number;
+  lessonActive: number;
+  activeCourse: string;
 
   constructor(
     private materialService: MaterialService,
@@ -24,11 +26,13 @@ export class MaterialComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activeCourse = sessionStorage.getItem('activeCourse');    
+
     this.route.params.subscribe(params => {
       this.idEdition = +params['idEdition'];
       let obs = this.materialService.getMaterial(this.idEdition);
       obs.subscribe(data => {
-        this.materials = data;
+        this.materials = data;        
         if(this.materials.length > 0){
           this.getURLVideo(1);
         }        
@@ -40,5 +44,6 @@ export class MaterialComponent implements OnInit {
     //this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/" + this.materials[lesson].url_video);
     this.src = "https://player.vimeo.com/video/" + this.materials[lesson - 1].url_video;
     this.linkActive = lesson;    
+    this.lessonActive = lesson;
   }
 }

@@ -1,3 +1,4 @@
+import { Global } from './../_shared/global';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from './../_services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService) { }
+    private userService: UserService
+    ) { }
 
   ngOnInit() {
     // reset login status
@@ -30,9 +32,9 @@ export class LoginComponent implements OnInit {
 
     let obs = this.userService.login(this.username, this.password);
     obs.subscribe(data => {
-      if (data.username == "mitocode21@gmail.com") {
-        localStorage.setItem('currentID', JSON.stringify(data.id_user));
-        localStorage.setItem('currentUser', JSON.stringify(data.username));
+      if (data.id_user > 0) {
+        sessionStorage.setItem('currentID', JSON.stringify(data.id_user));
+        sessionStorage.setItem('currentUser', JSON.stringify(data.username));
         this.router.navigate([this.returnUrl]);        
       }
     });

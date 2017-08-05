@@ -1,5 +1,5 @@
 export class Material{
-    edition: string;
+    edition: string;    
     lesson: number;
     url_video: string;
     url_resource: string;
