@@ -39,3 +39,11 @@
   </div>
 </div>
 <br />
+
+<div class="container">
+  <p *ngIf="materials.length == 0">
+    <ngb-alert [dismissible]="false">
+      <strong>No hay material disponible para {{activeCourse}}</strong>
+    </ngb-alert>    
+  </p>
+</div>

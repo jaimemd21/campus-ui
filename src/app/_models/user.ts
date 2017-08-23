@@ -3,6 +3,7 @@ export class User{
     username: string;
     password: string;
     finished: string;
+    person_name: string;    
 
     constructor() {        
     }

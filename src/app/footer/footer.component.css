@@ -8,10 +8,8 @@ li{
     list-style-type:none;
 }
 
-
-
-footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
-.footer-col { margin-top:50px; }
+footer { background-color:#0c1a1e; min-height:200px; font-family: 'Open Sans', sans-serif; position: absolute; bottom: 0; width: 100%; }
+.footer-col { margin-top:10px; }
 .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
 
 .footer-col p { color:#fff; font-size:12px; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
@@ -23,7 +21,7 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
 .footer-ul i { margin-right:10px;}
 .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
 
- .copyright { min-height:40px; background-color:#000000;}
+ .copyright { min-height:40px; background-color:#000000; position: absolute; bottom: 0; width: 100%;}
  .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0;}
  .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
  .post p { font-size:12px; color:#FFF; line-height:20px;}

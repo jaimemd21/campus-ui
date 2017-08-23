@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {  
   isCollapsed: boolean = false;
-  linkActive: number;
-  version: string = "1.0.0 (beta)"  
+  linkActive: number;  
 }

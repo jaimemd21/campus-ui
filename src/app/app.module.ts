@@ -1,3 +1,5 @@
+import { CountryService } from './_services/country.service';
+import { PersonService } from './_services/person.service';
 import { SafePipe } from './_pipes/safe.pipe';
 import { MaterialService } from './_services/material.service';
 import { CourseService } from './_services/course.service';
@@ -18,6 +20,7 @@ import { CourseComponent } from './course/course.component';
 import { MaterialComponent } from './material/material.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ConfigComponent } from './config/config.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     MaterialComponent,
     SafePipe,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { FooterComponent } from './footer/footer.component';
     routing,
     NgbModule.forRoot()
   ],
-  providers: [UserService, CourseService, MaterialService, AuthGuard],
+  providers: [UserService, CourseService, MaterialService, PersonService, CountryService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
